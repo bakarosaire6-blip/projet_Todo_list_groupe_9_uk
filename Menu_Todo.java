@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class Projet {
     public static void main(String[] args) {
+        gestion_de_tache gestionnaire = new gestion_de_tache();
+        Scanner clavier = new Scanner(System.in);
+         gestionnaire.listerTaches();
+
         Scanner clavier = new Scanner(System.in);
 
         int choix = 0;
