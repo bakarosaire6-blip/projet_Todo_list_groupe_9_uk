@@ -16,7 +16,8 @@ public class Menu_Todo {
             System.out.println("2. Ajouter une tâche");
             System.out.println("3. Marquer une tâche comme terminée");
             System.out.println("4. Supprimer une tâche");
-            System.out.println("5. Quitter");
+            System.out.println("5. Rechercher une Tache");
+            System.out.println("6. Quitter");
             System.out.print("Choix : ");
             
             if (clavier.hasNextInt()) {
