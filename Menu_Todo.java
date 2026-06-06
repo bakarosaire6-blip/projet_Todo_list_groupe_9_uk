@@ -42,7 +42,16 @@ public class Menu_Todo {
                     break;
 
                 case 3:
-                    System.out.print("pas encore implementé");
+                    System.out.print("Entrez l'ID de la tâche à terminer : ");
+                    if (clavier.hasNextInt()) {
+                        int idTerminer = clavier.nextInt();
+                        boolean reussiTerminer = gestionnaire.marquerTerminer(idTerminer);
+                        if (reussiTerminer) {
+                            System.out.println("Succès : Tâche marquée comme terminée.");
+                        } else {
+                            System.out.println("Erreur : Tâche introuvable avec cet ID.");
+                        }
+                    }
                     break;
 
                 case 4:
@@ -113,6 +122,16 @@ class gestion_de_tache {
     public boolean rechercherTache(int id){
         for (int i = 0; i < listeTaches.size(); i++){
             if (listeTaches.get(i).getId() == id){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean marquerTerminer(int id) {
+        for (Tache tache : listeTaches) {
+            if (tache.getId() == id) {
+                tache.setFait(true);
                 return true;
             }
         }
